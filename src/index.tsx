@@ -4,20 +4,22 @@ import './index.css';
 import App from './App';
 import User from './User';
 import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { createStore , applyMiddleware} from 'redux';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 // import reducer from './counter';
 import { Provider } from "react-redux";
-import rootReducer from "./reducer";
 // import {log} from "util";
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
-import Parent from "./components/Parent";
-import Hi from "./Hi";
-import Demo4 from './demo4';
+// import Parent from "./components/Parent";
+// import Hi from "./Hi";
+// import Demo4 from './demo4';
 import {Banner} from "./Demo5/Banner";
 import {Chengpin} from "./Demo5/Chengpin";
 import ErrorContainer from "./error/ErrorContainer";
+import STORE from "./store";
+//install redux-devtools-extension tools
+import { composeWithDevTools } from 'redux-devtools-extension'
+import Application from "./Application";
 
 
 // const  logger = (store: any) => (next: any) => (action: any)  => {
@@ -27,16 +29,15 @@ import ErrorContainer from "./error/ErrorContainer";
 //     return result;
 // }
 
-const store = createStore(rootReducer, {}, applyMiddleware(logger, thunk))
-store.subscribe(() => {
-    console.log( store.getState() );
-    // render();
-});
+// store.subscribe(() => {
+//     console.log( store.getState() );
+//     // render();
+// });
 
 
 // const render  = () =>
     ReactDOM.render(
-        <Provider store={store}>
+        <Provider store={ STORE }>
             {/* <GetData /> */}
             {/* <GetData3 /> */}
             {/* <Father/> */}
@@ -45,9 +46,10 @@ store.subscribe(() => {
             {/*<Parent />*/}
             {/*<Hi />*/}
             {/*<Demo4 />*/}
-            <Banner />
-            <Chengpin />
-            <ErrorContainer />
+            {/*<Banner />*/}
+            {/*<Chengpin />*/}
+            {/*<ErrorContainer />*/}
+            <Application/>
         </Provider>,
         document.getElementById('root')
     );
