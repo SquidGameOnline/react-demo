@@ -15,6 +15,9 @@ import thunk from 'redux-thunk'
 import Parent from "./components/Parent";
 import Hi from "./Hi";
 import Demo4 from './demo4';
+import {Banner} from "./Demo5/Banner";
+import {Chengpin} from "./Demo5/Chengpin";
+import ErrorContainer from "./error/ErrorContainer";
 
 
 // const  logger = (store: any) => (next: any) => (action: any)  => {
@@ -41,7 +44,10 @@ store.subscribe(() => {
             {/*<User/>*/}
             {/*<Parent />*/}
             {/*<Hi />*/}
-            <Demo4 />
+            {/*<Demo4 />*/}
+            <Banner />
+            <Chengpin />
+            <ErrorContainer />
         </Provider>,
         document.getElementById('root')
     );
