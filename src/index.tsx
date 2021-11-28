@@ -12,6 +12,9 @@ import rootReducer from "./reducer";
 // import {log} from "util";
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
+import Parent from "./components/Parent";
+import Hi from "./Hi";
+import Demo4 from './demo4';
 
 
 // const  logger = (store: any) => (next: any) => (action: any)  => {
@@ -34,8 +37,11 @@ store.subscribe(() => {
             {/* <GetData /> */}
             {/* <GetData3 /> */}
             {/* <Father/> */}
-            <App />
-            <User/>
+            {/*<App />*/}
+            {/*<User/>*/}
+            {/*<Parent />*/}
+            {/*<Hi />*/}
+            <Demo4 />
         </Provider>,
         document.getElementById('root')
     );
