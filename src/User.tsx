@@ -16,10 +16,10 @@ const User = (props: any) => {
                     User
                 </h1>
                 <h2>
-                    {JSON.stringify(props.user)}
+                    {props.user.user.title}
                 </h2>
                 <div>
-                    <Button variant="warning" onClick = {() => props.userActions.addUser() }>Add User</Button>
+                    <Button variant="warning" onClick = {() => props.userActions.getUserSuccess() }>Add User</Button>
                 </div>
             </div>
         </>
